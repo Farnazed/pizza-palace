@@ -1,5 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const util = require('util');
+const router = require('../routes/api');
 
 const getDeluxeTopingPrice = (toppings, size) => {
   let file = './db/pizzaPalace.db';
@@ -64,7 +65,10 @@ const getSizePrice = (size) => {
   return new Promise(function (resolve, reject) {
     db.get(query, function (err, row) {
       if (err) reject('Read error: ' + err.message);
-      else {
+      else if (!row) {
+        reject('result for query "' + query + '" is undefined.');
+      } else {
+        // console.log(row);
         resolve(row.price);
       }
     });

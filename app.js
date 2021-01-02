@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const api = require('./routes/api.js');
+const compression = require('compression');
 
+app.use(compression());
 app.use(express.json());
 // app.use('/api', api);
 

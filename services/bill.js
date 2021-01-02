@@ -4,13 +4,17 @@ const {
   getDeluxeTopingPrice,
 } = require('./prices');
 const numWords = require('num-words');
+const { GST } = require('../config/const');
 
 const computeBill = async (order) => {
   // 1. reformat order to dict
+
   let orderDict = getOrderDict(order);
 
   // 2. compute order Bill
-  let bill = [];
+  let bill = {};
+  let orderItems = [];
+  let subtotal = 0;
   // console.log(orderDict);
   for (const [key, value] of Object.entries(orderDict)) {
     let sizePrice = await getSizePrice(value.size);
@@ -38,10 +42,15 @@ const computeBill = async (order) => {
 
     let orderItemPrice =
       (sizePrice + deluxeTopingPrice + basicTopingPrice) * value.count;
+    subtotal += orderItemPrice;
     let orderItem = `${value.count} ${value.size}, ${amountInWords} Topping Pizza - ${toppings}:$${orderItemPrice}`;
     orderItem = toTitleCase(orderItem);
-    bill.push(orderItem);
+    orderItems.push(orderItem);
   }
+  bill.orders = orderItems;
+  bill.subtotal = subtotal;
+  bill.GST = Math.round(parseFloat(subtotal * GST) * 100) / 100;
+  bill.total = bill.subtotal + bill.GST;
   return bill;
 };
 
