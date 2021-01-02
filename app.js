@@ -9,9 +9,9 @@ app.use(express.json());
 
 app.use('/api', api);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, function () {
-  console.log('Server running on port 3000');
+  console.log('Server running on port 5000');
 });
 
 module.exports = app;
