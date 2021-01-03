@@ -6,7 +6,6 @@ const bodyValidator = require('../middleware/validator');
 
 router.post('/', bodyValidator, async (req, res) => {
   let { order } = req.body;
-
   try {
     let payload = await computeBill(order);
     res.send(payload);
