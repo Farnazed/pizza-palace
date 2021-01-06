@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 const api = require('./routes/api.js');
 const compression = require('compression');
-
+const path = require('path');
 app.use(compression());
 app.use(express.json());
-// app.use('/api', api);
 
 app.use('/api', api);
 
