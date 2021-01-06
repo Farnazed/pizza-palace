@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": " mocha ./tests/*.test.js --exit --inspect=0.0.0.0:3000 --timeout 120000",
-    "dev": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Farnaz Daneshvar",
   "license": "ISC",
