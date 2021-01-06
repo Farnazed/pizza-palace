@@ -1,6 +1,6 @@
 const PizzaItem = ({ toppingName, toppingOptions, onClick, option, price }) => {
   return (
-    <div className="px-5 col-md-3 col-sm-12">
+    <div className="px-5 col-md-4 col-sm-12">
       <h5 className="text-left">{toppingName}: </h5>
       <ul className="text-left list-group list-group-flush">
         {toppingOptions.map((item) => (

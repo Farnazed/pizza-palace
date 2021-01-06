@@ -75,23 +75,15 @@ const PizzaOptions = ({
           toppingName={'Deluxe Toppings'}
           toppingOptions={deluxeToppingOptions}
         />
-
-        <div className="col-md-3 col-sm-12 ">
-          <div className="p-2">
-            {' '}
-            <p>Price: $13</p>
-          </div>
-          <div className="p-2">
-            <button
-              type="submit"
-              style={{ position: 'absolute', bottom: '0px' }}
-              className="mt-2 btn btn-success"
-              onClick={onSaveClick}
-            >
-              Save Item
-            </button>
-          </div>
-        </div>
+      </div>
+      <div className="row justify-content-center">
+        <button
+          type="submit"
+          className="mt-2 btn btn-success px-5 mx-5 "
+          onClick={onSaveClick}
+        >
+          Save Item
+        </button>
       </div>
     </div>
   );

@@ -91,8 +91,8 @@ const Home = ({ getBill, orderBill: { bill, orders } }) => {
         />
       ))}
       <div className="mr-2 row mb-2">
-        <div className="col-10"></div>
-        <div className="col-2">
+        <div className="col-lg-10 col-sm-12 col-md-1 col-xs-12"></div>
+        <div className="col-lg-2 col-sm-12 col-md-12 col-xs-1">
           <button
             type="submit"
             style={{ width: '100%' }}
@@ -105,8 +105,8 @@ const Home = ({ getBill, orderBill: { bill, orders } }) => {
       </div>
 
       <div className="mr-2 row mb-2">
-        <div className="col-10"></div>
-        <div className="col-2">
+        <div className="col-lg-10 col-sm-12 col-md-1 col-xs-12"></div>
+        <div className="col-lg-2 col-sm-12 col-md-1 col-xs-12">
           {orders.length !== 0 && (
             <button
               type="submit"
