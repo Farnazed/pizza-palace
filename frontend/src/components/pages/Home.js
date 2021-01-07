@@ -145,9 +145,9 @@ const Home = ({ getBill, orderBill: { bill, orders } }) => {
             {orderBill.orders.map((item) => (
               <p>{item} </p>
             ))}
-            <p>GST: {orderBill.GST}</p>
-            <p>Subtotal: {orderBill.subtotal}</p>
-            <p>Total: {orderBill.total}</p>
+            <p>GST: ${orderBill.GST}</p>
+            <p>Subtotal: ${orderBill.subtotal}</p>
+            <p>Total: ${orderBill.total}</p>
           </div>
         </div>
       ) : (

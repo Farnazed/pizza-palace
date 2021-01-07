@@ -1,12 +1,14 @@
 # Pizza Palace
 
+Thi project is using Sqlit but can easily be replaced by any other database.
+
 sql commands to run :
 
-sqlite3 -init tables.sql ../pizzaPalace.db
+1. `sqlite3 -init tables.sql ../pizzaPalace.db`
 
-.quit
+2. `.quit`
 
-node addSampleData.js
+3. `node addSampleData.js`
 
 ## LOCAL DEPLOYMENT INSTRUCTIONS:
 
